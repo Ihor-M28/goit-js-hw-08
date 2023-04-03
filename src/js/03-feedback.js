@@ -9,7 +9,7 @@ localStorage.setItem('feedback-form-state', JSON.stringify(feedbackFormState));
 
 feedbackForm.addEventListener('input', handleFormInput);
 
-const feedbackForm = document.querySelector('.feedback-form');
+// const feedbackForm = document.querySelector('.feedback-form');
 const emailInput = feedbackForm.elements.email;
 const messageInput = feedbackForm.elements.message;
 
@@ -24,7 +24,7 @@ emailInput.value = '';
 messageInput.value = '';
 }
 
-const feedbackForm = document.querySelector('#feedback-form');
+// const feedbackForm = document.querySelector('#feedback-form');
 
 feedbackForm.addEventListener('submit', (event) => {
   event.preventDefault();
