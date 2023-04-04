@@ -1,4 +1,9 @@
+import throttle from 'lodash.throttle';
 const feedbackForm = document.querySelector('.feedback-form');
+const feedbackFormState = {
+  email: '',
+  message: ''
+};
 function handleFormInput() {
 const feedbackFormState = {
 email: feedbackForm.elements.email.value,
@@ -38,18 +43,8 @@ feedbackForm.addEventListener('submit', (event) => {
   messageInput.value = '';
 });
 
-import throttle from 'lodash.throttle';
 
 const updateLocalStorageThrottled = throttle(() => {
   localStorage.setItem('feedback-form-state', JSON.stringify(feedbackFormState));
 }, 500);
 
-emailInput.addEventListener('input', () => {
-  feedbackFormState.email = emailInput.value;
-  updateLocalStorageThrottled();
-});
-
-messageInput.addEventListener('input', () => {
-  feedbackFormState.message = messageInput.value;
-  updateLocalStorageThrottled();
-});
